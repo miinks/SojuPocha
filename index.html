@@ -8,6 +8,68 @@
     <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    
+
+    <div id="hero">
+        <div class="navbar">
+            <img src="default/logo.png" class="logo">
+            <div class="user">
+             <button type="button">Explore</button>
+                <img src="default/user.png" class="logo">
+            </div>
+        </div>
+    </div>
+        
+    <div class="container">
+        <div class="info">
+            <h1>Discover</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro commodi, voluptatibus dicta, laboriosam <br>est quod eos mollitia nam sed saepe quia culpa omnis distinctio. Nesciunt iste mollitia dicta fugit numquam?
+            </p>
+            <input type="text" placeholder="Search">
+        </div>
+    </div>
+<div class="slider">
+    <img src="default/left-arrow.png" id="previous">
+    <div class="preview">
+        <img src="default/small1.png" class="active thumbnail">
+        <img src="default/small2.png" class="thumbnail">
+        <img src="default/small3.png" class="thumbnail">
+        <img src="default/small4.png" class="thumbnail">
+        <img src="default/small5.png" class="thumbnail">
+    </div>
+    <img src="default/right-arrow.png" id="next">
+</div>
+ <script>
+    var prev = document.getElementById("prev");
+    var next = document.getElementById("next");
+    var thumbnail = document.getElementsByClassName("thumbnail")
+    var hero = document.getElementById("hero")
+
+    var backgroundImg = new Array(
+        "default/bg1.png",
+        "default/bg2.png",
+        "default/bg3.png",
+        "default/bg4.png",
+        "default/bg5.png",
+    );
+    let i = 0;
+    next.onclick = function(){
+        if(i < 4){
+        hero.style.backgroundImage = 'url("'+backgroundImg[i+1]+'")';
+        thumbnail[i+1].classList.add("active");
+        thumbnail[i].classList.remove("active");
+        i++;
+        }
+    }
+    previous.onclick = function(){
+        if(i > 0){
+        hero.style.backgroundImage = 'url("'+backgroundImg[i-1]+'")';
+        thumbnail[i-1].classList.add("active");
+        thumbnail[i].classList.remove("active");
+        i--;
+        }
+    }
+
+
+ </script>
+
 </body>
-</html>
